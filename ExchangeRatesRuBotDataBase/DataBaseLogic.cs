@@ -24,7 +24,7 @@ namespace ExchangeRatesRuBotDataBase
     //        var sql = @"INSERT INTO users VALUES({UserId}, {UserSettings})";
     //    }
 
-    //}
+    }
 }
 
 
