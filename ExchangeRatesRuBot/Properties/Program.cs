@@ -3,7 +3,7 @@ using ExchangeRatesRuBotLogic;
 using Telegram.Bot;
 using Telegram.Bot.Polling;
 
-namespace CurrencyConverterSuperBot
+namespace ExchangeRatesRuBotAPI
 {
     class Program
     {
@@ -29,7 +29,6 @@ namespace CurrencyConverterSuperBot
 
             var me = await botClient.GetMeAsync();
 
-            //CurrencyParse.CurrencyParseFromCBRF(); //парсим XML с сайта ЦБ РФ
             Console.WriteLine($"Начал прослушку @{me.FirstName}");
             Console.ReadLine();
             cts.Cancel();
