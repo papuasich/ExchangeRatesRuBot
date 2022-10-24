@@ -1,4 +1,5 @@
 ﻿using ExchangeRateRuBotParser;
+using ExchangeRatesRuBotDataBase;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
@@ -45,6 +46,10 @@ namespace ExchangeRatesRuBotLogic
                 await botClient.SendTextMessageAsync(message.Chat.Id, "Этот бот отправляет курсы валют ЦБ РФ" +
                 " ежедневно или по запросу." + " Бот работает бесплатно. Давайте его настроим чтобы вам было удобно." +
                 "Как вы хотите получать курсы?", replyMarkup: (InlineKeyboardMarkup)Menu.CreateKeyBoard("StartKeyboard", valuteList));
+
+                var kek = new DataBaseLogic();
+                kek.CheckUserInDb(1223);
+
                 return;
             }
             if (message.Text == "Запросить курс")

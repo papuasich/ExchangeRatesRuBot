@@ -27,9 +27,9 @@ namespace ExchangeRatesRuBotAPI
                 receiverOptions,
                 cancellationToken: cts.Token);
 
-            var me = await botClient.GetMeAsync();
+            var botName = await botClient.GetMeAsync();
 
-            Console.WriteLine($"Начал прослушку @{me.FirstName}");
+            Console.WriteLine($"Начал прослушку @{botName.FirstName}");
             Console.ReadLine();
             cts.Cancel();
         }
