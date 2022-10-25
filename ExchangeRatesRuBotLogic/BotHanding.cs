@@ -47,9 +47,21 @@ namespace ExchangeRatesRuBotLogic
                 " ежедневно или по запросу." + " Бот работает бесплатно. Давайте его настроим чтобы вам было удобно." +
                 "Как вы хотите получать курсы?", replyMarkup: (InlineKeyboardMarkup)Menu.CreateKeyBoard("StartKeyboard", valuteList));
 
-                var kek = new DataBaseLogic();
-                kek.CheckUserInDb(1223);
+                DataBaseLogic.CheckUserInDb(message.Chat.Username);
 
+                //if (DataBaseLogic.CheckUserInDb(message.Chat.Username))
+                //{
+                //    Console.WriteLine("Yes, he's there");
+                //}
+                //else
+                //{
+                //    Console.WriteLine("No, he isnt there");
+                //}
+
+
+                Console.WriteLine();
+
+                //if (DataBaseLogic.CheckUserInDb())
                 return;
             }
             if (message.Text == "Запросить курс")
