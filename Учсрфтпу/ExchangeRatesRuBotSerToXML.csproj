@@ -7,13 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Telegram.Bot" Version="18.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ExchangeRateParser\ExchangeRateRuBotParser.csproj" />
-    <ProjectReference Include="..\ExchangeRatesRuBotDataBase\ExchangeRatesRuBotDataBase.csproj" />
-    <ProjectReference Include="..\Учсрфтпу\ExchangeRatesRuBotSerToXML.csproj" />
   </ItemGroup>
 
 </Project>

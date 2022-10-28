@@ -1,5 +1,6 @@
 ﻿using ExchangeRateRuBotParser;
 using ExchangeRatesRuBotDataBase;
+using ExchangeRatesRuBotSerToXML;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
@@ -105,7 +106,7 @@ namespace ExchangeRatesRuBotLogic
                     valuteList[Index].IsSelect = '⬜';
                 }
 
-                new Class1.SerToXML(valuteList);
+                new Class1().SerToXML(valuteList);
                 await botClient.EditMessageTextAsync(callbackquery.Message.Chat.Id, callbackquery.Message.MessageId, "Выберите валюты для запроса," +
                 " что бы не делать это каждый раз:", replyMarkup: (InlineKeyboardMarkup)Menu.CreateKeyBoard("СurrencyKeyboard", valuteList));
                 return;
