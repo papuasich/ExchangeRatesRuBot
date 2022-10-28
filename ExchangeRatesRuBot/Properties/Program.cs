@@ -3,7 +3,7 @@ using ExchangeRatesRuBotLogic;
 using Telegram.Bot;
 using Telegram.Bot.Polling;
 
-namespace ExchangeRatesRuBotAPI
+namespace ExchangeRatesRuBotAPI.Properties
 {
     class Program
     {

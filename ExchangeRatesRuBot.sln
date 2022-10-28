@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRatesRuBotLogic", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRatesRuBotDataBase", "ExchangeRatesRuBotDataBase\ExchangeRatesRuBotDataBase.csproj", "{98D38EB3-DD7B-4A38-B539-9AD1EB764316}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRatesRuBotSerToXML", "ExchangeRatesRuBotSerToXML\ExchangeRatesRuBotSerToXML.csproj", "{EB868E22-03C8-483B-8CD9-CBD2CFC47507}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRatesRuBotSerToXML", "ExchangeRatesRuBotSerToXML1\ExchangeRatesRuBotSerToXML.csproj", "{6E565B93-C19D-46E5-9958-0DEEF58E59C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{98D38EB3-DD7B-4A38-B539-9AD1EB764316}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98D38EB3-DD7B-4A38-B539-9AD1EB764316}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98D38EB3-DD7B-4A38-B539-9AD1EB764316}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EB868E22-03C8-483B-8CD9-CBD2CFC47507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB868E22-03C8-483B-8CD9-CBD2CFC47507}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB868E22-03C8-483B-8CD9-CBD2CFC47507}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB868E22-03C8-483B-8CD9-CBD2CFC47507}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E565B93-C19D-46E5-9958-0DEEF58E59C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E565B93-C19D-46E5-9958-0DEEF58E59C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E565B93-C19D-46E5-9958-0DEEF58E59C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E565B93-C19D-46E5-9958-0DEEF58E59C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,6 @@
 ﻿using ExchangeRateRuBotParser;
 using ExchangeRatesRuBotDataBase;
+using ExchangeRatesRuBotSerToXML;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
@@ -46,23 +47,6 @@ namespace ExchangeRatesRuBotLogic
                 await botClient.SendTextMessageAsync(message.Chat.Id, "Этот бот отправляет курсы валют ЦБ РФ" +
                 " ежедневно или по запросу." + " Бот работает бесплатно. Давайте его настроим чтобы вам было удобно." +
                 "Как вы хотите получать курсы?", replyMarkup: (InlineKeyboardMarkup)Menu.CreateKeyBoard("StartKeyboard", valuteList));
-
-                 
-
-                if (new DataBaseLogic().CheckUserInDb(message.Chat.Username))
-                {
-                    Console.WriteLine("Yes, he's there");
-                }
-                else
-                {
-                    new DataBaseLogic().CreateUser(message.Chat.Username);
-                    Console.WriteLine("Add new user");
-                }
-
-
-                Console.WriteLine();
-
-                //if (DataBaseLogic.CheckUserInDb())
                 return;
             }
             if (message.Text == "Запросить курс")
@@ -85,19 +69,6 @@ namespace ExchangeRatesRuBotLogic
                 " что бы не делать это каждый раз:", replyMarkup: (InlineKeyboardMarkup)Menu.CreateKeyBoard("СurrencyKeyboard", valuteList));
                 return;
             }
-            if (callbackquery.Data == "Назад")
-            {
-                await botClient.EditMessageTextAsync(callbackquery.Message.Chat.Id, callbackquery.Message.MessageId, "Этот бот отправляет курсы валют ЦБ РФ" +
-                " ежедневно или по запросу." + " Бот работает бесплатно. Давайте его настроим чтобы вам было удобно." +
-                "Как вы хотите получать курсы?", replyMarkup: (InlineKeyboardMarkup)Menu.CreateKeyBoard("StartKeyboard", valuteList));
-                return;
-            }
-            if (callbackquery.Data == "Далее")
-            {
-                await botClient.EditMessageTextAsync(callbackquery.Message.Chat.Id, callbackquery.Message.MessageId, "Настройка завершена!");
-                await botClient.SendTextMessageAsync(callbackquery.Message.Chat.Id, "Ожидаем команду.", replyMarkup: (ReplyKeyboardMarkup)Menu.CreateKeyBoard("ReplyKeyboard", valuteList));
-                return;
-            }
             if (valuteList.Exists(x => x.CharCode == callbackquery.Data.Trim(CharToTrim)))
             {
                 int Index = valuteList.FindIndex(x => x.CharCode == callbackquery.Data.Trim(CharToTrim));
@@ -109,8 +80,37 @@ namespace ExchangeRatesRuBotLogic
                 {
                     valuteList[Index].IsSelect = '⬜';
                 }
+
+                
+
                 await botClient.EditMessageTextAsync(callbackquery.Message.Chat.Id, callbackquery.Message.MessageId, "Выберите валюты для запроса," +
                 " что бы не делать это каждый раз:", replyMarkup: (InlineKeyboardMarkup)Menu.CreateKeyBoard("СurrencyKeyboard", valuteList));
+                return;
+            }
+            if (callbackquery.Data == "Назад")
+            {
+                await botClient.EditMessageTextAsync(callbackquery.Message.Chat.Id, callbackquery.Message.MessageId, "Этот бот отправляет курсы валют ЦБ РФ" +
+                " ежедневно или по запросу." + " Бот работает бесплатно. Давайте его настроим чтобы вам было удобно." +
+                "Как вы хотите получать курсы?", replyMarkup: (InlineKeyboardMarkup)Menu.CreateKeyBoard("StartKeyboard", valuteList));
+                return;
+            }
+            if (callbackquery.Data == "Далее")
+            {
+                await botClient.EditMessageTextAsync(callbackquery.Message.Chat.Id, callbackquery.Message.MessageId, "Настройка завершена!");
+                await botClient.SendTextMessageAsync(callbackquery.Message.Chat.Id, "Ожидаем команду.", replyMarkup: (ReplyKeyboardMarkup)Menu.CreateKeyBoard("ReplyKeyboard", valuteList));
+                //new Class1().SerealizeToXMLString(valuteList);
+
+                //if (new DataBaseLogic().CheckUserInDb(message.Chat.Username))
+                //{
+                //    Console.WriteLine("Yes, he's there");
+
+                //}
+                //else
+                //{
+                //    new DataBaseLogic().CreateUser(message.Chat.Username);
+
+                //    Console.WriteLine("Add new user");
+                //}
                 return;
             }
         }
