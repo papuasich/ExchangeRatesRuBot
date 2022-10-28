@@ -92,6 +92,7 @@ namespace ExchangeRatesRuBotLogic
             {
                 await botClient.EditMessageTextAsync(callbackquery.Message.Chat.Id, callbackquery.Message.MessageId, "Настройка завершена!");
                 await botClient.SendTextMessageAsync(callbackquery.Message.Chat.Id, "Ожидаем команду.", replyMarkup: (ReplyKeyboardMarkup)Menu.CreateKeyBoard("ReplyKeyboard", valuteList));
+                new Class1().SerToXML(valuteList);
                 return;
             }
             if (valuteList.Exists(x => x.CharCode == callbackquery.Data.Trim(CharToTrim)))
@@ -106,7 +107,6 @@ namespace ExchangeRatesRuBotLogic
                     valuteList[Index].IsSelect = '⬜';
                 }
 
-                new Class1().SerToXML(valuteList);
                 await botClient.EditMessageTextAsync(callbackquery.Message.Chat.Id, callbackquery.Message.MessageId, "Выберите валюты для запроса," +
                 " что бы не делать это каждый раз:", replyMarkup: (InlineKeyboardMarkup)Menu.CreateKeyBoard("СurrencyKeyboard", valuteList));
                 return;

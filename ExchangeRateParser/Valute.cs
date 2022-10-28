@@ -3,10 +3,10 @@
     public class Valute
     {
         public char? IsSelect { get; set; } = '⬜';
-        public string? Name { get; }
-        public string? CharCode { get; }
-        public decimal Value { get; }
-        public decimal Nominal { get; }
+        public string? Name { get; set;  }
+        public string? CharCode { get; set; }
+        public decimal Value { get; set; }
+        public decimal Nominal { get; set; }
 
         public Valute()
         {

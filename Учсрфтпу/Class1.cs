@@ -11,9 +11,16 @@ namespace ExchangeRatesRuBotSerToXML
         {
             XmlSerializer xmlSerializ = new XmlSerializer(typeof(List<Valute>));
 
+            var j = valList.Where(selectValute => selectValute.IsSelect == '✅').Select(x => x.CharCode).ToList();
+
+            foreach (var item in j)
+            {
+                Console.WriteLine(item);
+            }
+
             using (var sw = new Utf8StringWriter())
             {
-                xmlSerializ.Serialize(sw, valList);
+                xmlSerializ.Serialize(sw, valList.Where(selectValute => selectValute.IsSelect == '✅').ToList());
                 Console.WriteLine(sw.ToString());
             }
         }
