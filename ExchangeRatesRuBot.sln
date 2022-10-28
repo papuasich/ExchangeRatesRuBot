@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRatesRuBotAPI", "ExchangeRatesRuBot\ExchangeRatesRuBotAPI.csproj", "{EED88705-6341-4949-B827-749715512D9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRatesRuBotAPI", "ExchangeRatesRuBot\ExchangeRatesRuBotAPI.csproj", "{EED88705-6341-4949-B827-749715512D9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRateRuBotParser", "ExchangeRateParser\ExchangeRateRuBotParser.csproj", "{021CAC4E-807D-49D4-B56D-EFC7926BC40C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRateRuBotParser", "ExchangeRateParser\ExchangeRateRuBotParser.csproj", "{021CAC4E-807D-49D4-B56D-EFC7926BC40C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRatesRuBotLogic", "ExchangeRatesRuBotLogic\ExchangeRatesRuBotLogic.csproj", "{963BF180-8E0E-4897-B28E-AD12506D6604}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRatesRuBotLogic", "ExchangeRatesRuBotLogic\ExchangeRatesRuBotLogic.csproj", "{963BF180-8E0E-4897-B28E-AD12506D6604}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRatesRuBotDataBase", "ExchangeRatesRuBotDataBase\ExchangeRatesRuBotDataBase.csproj", "{98D38EB3-DD7B-4A38-B539-9AD1EB764316}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRatesRuBotDataBase", "ExchangeRatesRuBotDataBase\ExchangeRatesRuBotDataBase.csproj", "{98D38EB3-DD7B-4A38-B539-9AD1EB764316}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRatesRuBotSerToXML", "ExchangeRatesRuBotSerToXML\ExchangeRatesRuBotSerToXML.csproj", "{EB868E22-03C8-483B-8CD9-CBD2CFC47507}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{98D38EB3-DD7B-4A38-B539-9AD1EB764316}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98D38EB3-DD7B-4A38-B539-9AD1EB764316}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98D38EB3-DD7B-4A38-B539-9AD1EB764316}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB868E22-03C8-483B-8CD9-CBD2CFC47507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB868E22-03C8-483B-8CD9-CBD2CFC47507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB868E22-03C8-483B-8CD9-CBD2CFC47507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB868E22-03C8-483B-8CD9-CBD2CFC47507}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

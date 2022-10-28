@@ -4,9 +4,9 @@ namespace ExchangeRatesRuBotDataBase
 {
     public class DataBaseLogic
     {
-        private static NpgsqlConnection ConnectionString = new NpgsqlConnection("Host=localhost;Username=postgres;Password=Qwerty12345;Database=telegramusersinfo");
+        private static NpgsqlConnection ConnectionString = new NpgsqlConnection("Host=localhost;Username=postgres;Password=Qwerty12345+;Database=telegramusersinfo");
         
-        public static void CheckUserInDb(string UserName)
+        public bool CheckUserInDb(string UserName)
         {
             ConnectionString.Open();
             
@@ -14,9 +14,20 @@ namespace ExchangeRatesRuBotDataBase
 
             command.Prepare();
 
-            
-            Console.WriteLine(command.ToString());
+            var unswer = (bool)command.ExecuteScalar();
 
+            ConnectionString.Close();
+
+            return unswer;
+        }
+
+        public void CreateUser(string UserName)
+        {
+            ConnectionString.Open();
+
+            var command = new NpgsqlCommand($"INSERT INTO users(user_name, user_settings) VALUES('{UserName}', '1')", ConnectionString);
+
+            command.ExecuteNonQuery();
 
             ConnectionString.Close();
         }
