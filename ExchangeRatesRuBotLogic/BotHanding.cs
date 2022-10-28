@@ -49,20 +49,15 @@ namespace ExchangeRatesRuBotLogic
 
                  
 
-                if (new DataBaseLogic().CheckUserInDb(message.Chat.Username))
-                {
-                    Console.WriteLine("Yes, he's there");
-                }
-                else
-                {
-                    new DataBaseLogic().CreateUser(message.Chat.Username);
-                    Console.WriteLine("Add new user");
-                }
-
-
-                Console.WriteLine();
-
-                //if (DataBaseLogic.CheckUserInDb())
+                //if (new DataBaseLogic().CheckUserInDb(message.Chat.Username))
+                //{
+                //    Console.WriteLine("Yes, he's there");
+                //}
+                //else
+                //{
+                //    new DataBaseLogic().CreateUser(message.Chat.Username);
+                //    Console.WriteLine("Add new user");
+                //}
                 return;
             }
             if (message.Text == "Запросить курс")
@@ -109,6 +104,8 @@ namespace ExchangeRatesRuBotLogic
                 {
                     valuteList[Index].IsSelect = '⬜';
                 }
+
+                new Class1.SerToXML(valuteList);
                 await botClient.EditMessageTextAsync(callbackquery.Message.Chat.Id, callbackquery.Message.MessageId, "Выберите валюты для запроса," +
                 " что бы не делать это каждый раз:", replyMarkup: (InlineKeyboardMarkup)Menu.CreateKeyBoard("СurrencyKeyboard", valuteList));
                 return;
