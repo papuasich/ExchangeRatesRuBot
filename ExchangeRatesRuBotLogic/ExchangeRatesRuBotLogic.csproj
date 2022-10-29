@@ -13,7 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ExchangeRateParser\ExchangeRateRuBotParser.csproj" />
     <ProjectReference Include="..\ExchangeRatesRuBotDataBase\ExchangeRatesRuBotDataBase.csproj" />
-    <ProjectReference Include="..\Учсрфтпу\ExchangeRatesRuBotSerToXML.csproj" />
+    <ProjectReference Include="..\ExchangeRatesRuBotSerToXML\ExchangeRatesRuBotSerToXML.csproj" />
   </ItemGroup>
 
 </Project>

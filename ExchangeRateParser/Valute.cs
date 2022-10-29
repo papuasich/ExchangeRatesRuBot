@@ -1,7 +1,10 @@
-﻿namespace ExchangeRateRuBotParser
+﻿using System.Runtime.Serialization;
+
+namespace ExchangeRateRuBotParser
 {
     public class Valute
     {
+      
         public char? IsSelect { get; set; } = '⬜';
         public string? Name { get; set;  }
         public string? CharCode { get; set; }

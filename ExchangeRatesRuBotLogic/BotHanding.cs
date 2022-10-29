@@ -1,6 +1,5 @@
 ﻿using ExchangeRateRuBotParser;
 using ExchangeRatesRuBotDataBase;
-using ExchangeRatesRuBotSerToXML;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types;
@@ -47,18 +46,6 @@ namespace ExchangeRatesRuBotLogic
                 await botClient.SendTextMessageAsync(message.Chat.Id, "Этот бот отправляет курсы валют ЦБ РФ" +
                 " ежедневно или по запросу." + " Бот работает бесплатно. Давайте его настроим чтобы вам было удобно." +
                 "Как вы хотите получать курсы?", replyMarkup: (InlineKeyboardMarkup)Menu.CreateKeyBoard("StartKeyboard", valuteList));
-
-                 
-
-                //if (new DataBaseLogic().CheckUserInDb(message.Chat.Username))
-                //{
-                //    Console.WriteLine("Yes, he's there");
-                //}
-                //else
-                //{
-                //    new DataBaseLogic().CreateUser(message.Chat.Username);
-                //    Console.WriteLine("Add new user");
-                //}
                 return;
             }
             if (message.Text == "Запросить курс")
@@ -92,7 +79,15 @@ namespace ExchangeRatesRuBotLogic
             {
                 await botClient.EditMessageTextAsync(callbackquery.Message.Chat.Id, callbackquery.Message.MessageId, "Настройка завершена!");
                 await botClient.SendTextMessageAsync(callbackquery.Message.Chat.Id, "Ожидаем команду.", replyMarkup: (ReplyKeyboardMarkup)Menu.CreateKeyBoard("ReplyKeyboard", valuteList));
-                new Class1().SerToXML(valuteList);
+                
+                if(new DataBaseLogic().CheckUserInDb(callbackquery.Message.Chat.Username))
+                {
+                    new DataBaseLogic().UpdateUser(callbackquery.Message.Chat.Username, valuteList);
+                }
+                else
+                {
+                    new DataBaseLogic().CreateUser(callbackquery.Message.Chat.Username, valuteList);
+                }
                 return;
             }
             if (valuteList.Exists(x => x.CharCode == callbackquery.Data.Trim(CharToTrim)))

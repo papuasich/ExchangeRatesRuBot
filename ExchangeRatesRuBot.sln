@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRatesRuBotLogic", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeRatesRuBotDataBase", "ExchangeRatesRuBotDataBase\ExchangeRatesRuBotDataBase.csproj", "{98D38EB3-DD7B-4A38-B539-9AD1EB764316}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRatesRuBotSerToXML", "Учсрфтпу\ExchangeRatesRuBotSerToXML.csproj", "{35F4D55D-04F0-43A4-9961-B10621DEE532}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRatesRuBotSerToXML", "ExchangeRatesRuBotSerToXML\ExchangeRatesRuBotSerToXML.csproj", "{D1F07ABA-B5B7-4C9D-AA79-B9D34BE1D2CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{98D38EB3-DD7B-4A38-B539-9AD1EB764316}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98D38EB3-DD7B-4A38-B539-9AD1EB764316}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98D38EB3-DD7B-4A38-B539-9AD1EB764316}.Release|Any CPU.Build.0 = Release|Any CPU
-		{35F4D55D-04F0-43A4-9961-B10621DEE532}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{35F4D55D-04F0-43A4-9961-B10621DEE532}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{35F4D55D-04F0-43A4-9961-B10621DEE532}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{35F4D55D-04F0-43A4-9961-B10621DEE532}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1F07ABA-B5B7-4C9D-AA79-B9D34BE1D2CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1F07ABA-B5B7-4C9D-AA79-B9D34BE1D2CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1F07ABA-B5B7-4C9D-AA79-B9D34BE1D2CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1F07ABA-B5B7-4C9D-AA79-B9D34BE1D2CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

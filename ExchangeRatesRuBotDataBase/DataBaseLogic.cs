@@ -1,4 +1,6 @@
-﻿using Npgsql;
+﻿using ExchangeRateRuBotParser;
+using ExchangeRatesRuBotSerToXML;
+using Npgsql;
 
 namespace ExchangeRatesRuBotDataBase
 {
@@ -21,7 +23,7 @@ namespace ExchangeRatesRuBotDataBase
             return unswer;
         }
 
-        public void CreateUser(string UserName)
+        public void CreateUser(string UserName, List<Valute> valList)
         {
             ConnectionString.Open();
 
@@ -31,5 +33,18 @@ namespace ExchangeRatesRuBotDataBase
 
             ConnectionString.Close();
         }
+
+        public void UpdateUser(string UserName, List<Valute> valList)
+        {
+            ConnectionString.Open();
+
+            var command = new NpgsqlCommand($"UPDATE users SET user_settings = '{new SerValuteToXML().SerToXML(valList)}' WHERE user_name = '{UserName}'", ConnectionString);
+
+            command.ExecuteNonQuery();
+
+            ConnectionString.Close();
+        }
     }
 }
+
+//UPDATE users SET user_settings = '2' WHERE user_name = 'glyukanatnatriya'
