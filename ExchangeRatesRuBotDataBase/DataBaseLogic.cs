@@ -44,6 +44,23 @@ namespace ExchangeRatesRuBotDataBase
 
             ConnectionString.Close();
         }
+
+        public string GetUserSettings(string UserName)
+        {
+            ConnectionString.Open();
+
+            var command = new NpgsqlCommand($"SELECT user_settings FROM users WHERE user_name = '{UserName}'", ConnectionString);
+
+            if (command.ExecuteScalar() is string unswer)
+            {
+                ConnectionString.Close();
+                return unswer;
+            }
+
+            ConnectionString.Close();
+
+            return null;
+        }
     }
 }
 

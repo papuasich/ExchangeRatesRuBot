@@ -64,6 +64,24 @@ namespace ExchangeRatesRuBotLogic
         {
             if (callbackquery.Data == "По запросу" || callbackquery.Data == "Ежедневно")
             {
+                if(new DataBaseLogic().CheckUserInDb(callbackquery.Message.Chat.Username))
+                {
+                    //меняем на галочку в соответсвии с настройками пользователя в бД
+                    var settings = new DataBaseLogic().GetUserSettings(callbackquery.Message.Chat.Username).Split(' ').ToList();
+
+                    for (int i = 0; i < valuteList.Count; i++)
+                    {
+                        for (int j = 0; j < settings.Count; j++)
+                        {
+                            if (settings[j] == valuteList[i].CharCode)
+                            {
+                                valuteList[i].IsSelect = '✅';
+                            }
+                        }
+                    }
+                }
+
+
                 await botClient.EditMessageTextAsync(callbackquery.Message.Chat.Id, callbackquery.Message.MessageId, "Выберите валюты для запроса," +
                 " что бы не делать это каждый раз:", replyMarkup: (InlineKeyboardMarkup)Menu.CreateKeyBoard("СurrencyKeyboard", valuteList));
                 return;
